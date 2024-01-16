@@ -44,7 +44,7 @@ public class ExcelReader {
 					signInDetails[i][j] = String.valueOf(cellValue);
 				} else if (cellValue.getCellType() == CellType.BOOLEAN) {
 					// Reporter.log("The Cell Value is : " + cellValue.getRawValue(), true);
-					signInDetails[i][j] = String.valueOf(cellValue);
+					signInDetails[i][j] = String.valueOf(cellValue);// Testing
 				}
 			}
 
