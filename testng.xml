@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite">
+	<listeners><listener class-name="learnautomation.listeners.ExtentReportListener"></listener></listeners>
+  <test thread-count="5" name="learnAutomation">
+    <classes>
+      <class name="testCases.LoginTest"/>
+      <class name="learnautomation.base.BaseClass"/>
+    </classes>
+  </test> <!-- learnAutomation -->
+</suite> <!-- Suite -->
