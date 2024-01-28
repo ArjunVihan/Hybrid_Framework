@@ -12,6 +12,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
@@ -56,6 +57,13 @@ public class UtilityHelper extends BaseClass {
 		return screenshotasBase64;
 	}
 
+	public static void mouseHover(WebDriver driver, WebElement element) {
+
+		Actions actions = new Actions(driver);
+		actions.moveToElement(element).perform();
+
+	}
+
 	public static String selectOptionValue(By locator, String Searchelement) {
 		List<WebElement> dropdownElement = driver.findElements(locator);
 		// System.out.println(((WebElement) dropdownElement).getText());
@@ -84,26 +92,53 @@ public class UtilityHelper extends BaseClass {
 		return getdateString;
 	}
 
-	public static void clickElement(WebDriver driver, By locator) {
-		driver.findElement(locator).click();
+	public static void clickElement(WebDriver driver, WebElement element) {
+		try {
+			element.click();
+
+		} catch (Exception e) {
+			Reporter.log("LOG:INFO - WebElement Click Failed - Trying With Actions Class Click " + e.getMessage(),
+					true);
+
+			Actions actions = new Actions(driver);
+			try {
+				actions.click(element).perform();
+
+			} catch (Exception e2) {
+				Reporter.log("LOG:INFO - Actions Class Click Failed - Trying With JSExecutor Class " + e2.getMessage(),
+						true);
+
+				JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+
+				jsExecutor.executeScript("arguments[0].click()", element);
+
+			}
+
+		}
+
 	}
 
- 
-	
-	
-	public static void highLighter(WebDriver driver,WebElement LocatorEle) {
+	public static void scrollTillElementPresent(WebDriver driver, By locator) {
+		Actions actions = new Actions(driver);
+		actions.scrollToElement(driver.findElement(locator)).perform();
+	}
+
+	public static void scrollTillElementPresent(WebDriver driver, WebElement element) {
+		Actions actions = new Actions(driver);
+		actions.scrollToElement(element).perform();
+	}
+
+	public static void highLighter(WebDriver driver, WebElement LocatorEle) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].setAttribute('style','background: yellow; border: solid 2px red')",LocatorEle);
+		js.executeScript("arguments[0].setAttribute('style','background: yellow; border: solid 2px red')", LocatorEle);
 		try {
 			Thread.sleep(1000);
 		} catch (Exception e) {
-			Reporter.log(e.getMessage(),true);
+			Reporter.log(e.getMessage(), true);
 		}
-		js.executeScript("arguments[0].setAttribute('style','border: solid 2px black')",LocatorEle);
-		
+		js.executeScript("arguments[0].setAttribute('style','border: solid 2px black')", LocatorEle);
+
 	}
-	
-	
 
 	public static void UploadFile(By Element, String uploadFilePathBy) {
 		driver.findElement(Element).sendKeys(uploadFilePathBy);
@@ -122,5 +157,4 @@ public class UtilityHelper extends BaseClass {
 		return element;
 	}
 
-	
 }

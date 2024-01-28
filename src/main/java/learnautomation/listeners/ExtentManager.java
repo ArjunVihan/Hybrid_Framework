@@ -25,7 +25,8 @@ public class ExtentManager
         ExtentSparkReporter htmlReporter = new ExtentSparkReporter(".//Reports//Automation_"+UtilityHelper.getDatehhMM()+".html");
         htmlReporter.config().setTheme(Theme.DARK);
         htmlReporter.config().setDocumentTitle("Automation Report");
-                htmlReporter.config().setReportName("Learn Automation Login Report");
+        htmlReporter.config().setEncoding("utf-8");
+        htmlReporter.config().setReportName("Learn Automation Login Report");
         extent = new ExtentReports();
         extent.attachReporter(htmlReporter);
         

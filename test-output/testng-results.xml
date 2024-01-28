@@ -5,9 +5,6 @@
       <![CDATA[LOG:INFO- Running Before Class - Setting Up Browser ]]>
     </line>
     <line>
-      <![CDATA[chrome]]>
-    </line>
-    <line>
       <![CDATA[LOG:INFO- Browser and Application Up and Running ]]>
     </line>
     <line>
@@ -23,25 +20,22 @@
       <![CDATA[LOG:INFO- Browser Closed]]>
     </line>
   </reporter-output>
-  <suite started-at="2024-01-14T17:02:00 IST" name="Suite" finished-at="2024-01-14T17:02:20 IST" duration-ms="19651">
+  <suite started-at="2024-01-27T21:23:04 IST" name="Suite" finished-at="2024-01-27T21:23:20 IST" duration-ms="16526">
     <groups>
     </groups>
-    <test started-at="2024-01-14T17:02:00 IST" name="learnAutomation" finished-at="2024-01-14T17:02:20 IST" duration-ms="19651">
+    <test started-at="2024-01-27T21:23:04 IST" name="learnAutomation" finished-at="2024-01-27T21:23:20 IST" duration-ms="16526">
       <class name="testCases.LoginTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:testCases.LoginTest@54e7df6a]" started-at="2024-01-14T17:02:02 IST" name="setup" finished-at="2024-01-14T17:02:08 IST" duration-ms="5923" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:testCases.LoginTest@3fed2870]" started-at="2024-01-27T21:23:05 IST" name="setup" finished-at="2024-01-27T21:23:09 IST" duration-ms="4003" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[LOG:INFO- Running Before Class - Setting Up Browser ]]>
-            </line>
-            <line>
-              <![CDATA[chrome]]>
             </line>
             <line>
               <![CDATA[LOG:INFO- Browser and Application Up and Running ]]>
             </line>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="validLogin(java.lang.String,java.lang.String)[pri:0, instance:testCases.LoginTest@54e7df6a]" started-at="2024-01-14T17:02:08 IST" name="validLogin" data-provider="readLoginData" finished-at="2024-01-14T17:02:19 IST" duration-ms="10829" status="PASS">
+        <test-method signature="validLogin(java.lang.String,java.lang.String)[pri:0, instance:testCases.LoginTest@3fed2870]" started-at="2024-01-27T21:23:09 IST" name="validLogin" data-provider="readLoginData" finished-at="2024-01-27T21:23:20 IST" duration-ms="10546" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -57,7 +51,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validLogin -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.LoginTest@54e7df6a]" started-at="2024-01-14T17:02:19 IST" name="tearDown" finished-at="2024-01-14T17:02:20 IST" duration-ms="540" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.LoginTest@3fed2870]" started-at="2024-01-27T21:23:20 IST" name="tearDown" finished-at="2024-01-27T21:23:20 IST" duration-ms="354" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[LOG:INFO- Running After Class - Closing Browser]]>
@@ -67,7 +61,7 @@
             </line>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.LoginTest@54e7df6a]" started-at="2024-01-14T17:02:20 IST" name="tearDown" finished-at="2024-01-14T17:02:20 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.LoginTest@3fed2870]" started-at="2024-01-27T21:23:20 IST" name="tearDown" finished-at="2024-01-27T21:23:20 IST" duration-ms="1" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[LOG:INFO- Running After Class - Closing Browser]]>
